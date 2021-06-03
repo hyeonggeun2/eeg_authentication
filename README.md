@@ -1,4 +1,4 @@
-# eeg_authentication
+# realtime_authentication
 
 1. server/members/create/ **(POST)**
 
@@ -91,14 +91,14 @@
 
 4. server/authenticate/make_model/ **(POST)**
 
-   EEG 데이터를 받아서 모델을 만듭니다.
+    데이터를 받아서 모델을 만듭니다.
 
    >- request
    >
    >```
    >{
    >	"token": e4c0d0daaf2cc4ee2190a033957c1aa8c9eca9a5,
-   >	"EEG": (FILE)
+   >	"data": (FILE)
    >}
    >```
    >
@@ -116,14 +116,14 @@
    
 5. server/authenticate/check_user/ **(POST)**
 
-   EEG 데이터를 받아서 해당 유저가 맞는지 검사합니다.
+   생체인증 데이터를 받아서 해당 유저가 맞는지 검사합니다.
 
    > - request
    >
    > ```
    > {
    > 	"token": e4c0d0daaf2cc4ee2190a033957c1aa8c9eca9a5,
-   > 	"EEG": (FILE)
+   > 	"data": (FILE)
    > }
    > ```
    >
