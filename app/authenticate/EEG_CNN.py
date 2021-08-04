@@ -7,7 +7,8 @@ import random
 
 DATA_SIZE = 480
 
-pub_data = scipy.io.loadmat('static/Motor_Imagery.mat')['data']
+# pub_data = scipy.io.loadmat('static/Motor_Imagery.mat')['data']
+pub_data = np.zeros((100, 2))
 public_sub_size = pub_data.shape[1] // 480
 public_sub_cnt = pub_data.shape[0]
 pub_data = pub_data.reshape(-1, 1)

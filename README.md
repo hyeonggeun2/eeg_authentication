@@ -65,15 +65,15 @@
 
    
 
-3. server/members/logout/ **(POST)**
+3. server/members/logout/ **(GET)**
 
    로그아웃(토큰 삭제)합니다.
 
-   >- request
+   >- Header에 값 추가
    >
    >```
    >{
-   >    "token": "e4c0d0daaf2cc4ee2190a033957c1aa8c9eca9a5"
+   >    Authorization: Token add7188de45b08a2b53944e5f6b95a43053c2ebb
    >}
    >```
    >

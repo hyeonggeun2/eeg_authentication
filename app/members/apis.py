@@ -46,15 +46,10 @@ class AuthTokenAPIView(APIView):
 
 # 로그아웃 (토큰 삭제)
 class LogoutAPIView(APIView):
-    authentication_classes = (TokenAuthentication,)
-
-    # permission_classes = (IsAuthenticated,)
-
-    def post(self, request):
-        user_token = Token.objects.filter(key=request.data['token'])
+    def get(self, request):
+        user_token = Token.objects.filter(key=request.auth)
         if user_token:
             user_token.delete()
             return Response(data={"detail": "로그아웃 되었습니다."}, status=status.HTTP_200_OK)
         else:
-            return Response(data={"detail": "로그인 되어있지 않은 유저입니다."}, status=status.HTTP_200_OK)
-
+            return Response(data={"detail": "토큰이 유효하지 않습니다."}, status=status.HTTP_200_OK)
